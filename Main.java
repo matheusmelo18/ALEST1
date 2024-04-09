@@ -87,8 +87,9 @@ public class Main {
             // Escrever a matriz de vendas
             writer.write("                    Janeiro     Fevereiro   Março       Abril       Maio        Junho       Julho       Agosto      Setembro    Outubro     Novembro    Dezembro    \n");
             String[] meses = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+            String [] nomes = {"Matriz, Filial Sul, Filial Norte, Filia Nordeste"};
             for (int i = 0; i < 4; i++) {
-                writer.write(String.format("%-20s", getStoreIndex(Integer.toString(i))));
+                writer.write(String.format("%-20s", i));
                 for (int j = 0; j < 12; j++) {
                     writer.write(String.format("%-12s", vendasPorLojaMes[i][j]));
                 }
@@ -118,6 +119,7 @@ public class Main {
     }
 
     private static int getStoreIndex(String loja) {
+            String matriz="Matriz";
         switch (loja) {
             case "Matriz":
                 return 0;
@@ -128,7 +130,9 @@ public class Main {
             case "Filial Nordeste":
                 return 3;
             default:
+
                 return 4;
+
         }
     }
 
@@ -138,7 +142,7 @@ public class Main {
                 return 0;
             case "Fevereiro":
                 return 1;
-            case "Março":
+            case "Marco":
                 return 2;
             case "Abril":
                 return 3;
@@ -159,7 +163,7 @@ public class Main {
             case "Dezembro":
                 return 11;
             default:
-                return 11;
+                return -1;
         }
     }
 
